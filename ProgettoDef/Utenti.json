@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "username": "Nicola",
+    "telegramId": "AghTfs",
+    "pw": "nicola1",
+    "tipo": true
+  },
+  {
+    "id": 1,
+    "username": "Martina",
+    "telegramId": "mzaulii",
+    "pw": "martina2",
+    "tipo": false
+  },
+  {
+    "id": 2,
+    "username": "Montecchiari",
+    "telegramId": "Patonz",
+    "pw": "montecchiari3",
+    "tipo": false
+  }
+]

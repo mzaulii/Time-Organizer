@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdministratorController">
+   <children>
+      <VBox fx:id="leftAdminVBox" prefHeight="700.0" prefWidth="270.0" style="-fx-background-color: #AD07E3;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="150.0" prefWidth="270.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" layoutX="105.0" layoutY="79.0" size="5em" />
+                  <Text fill="WHITE" layoutX="60.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME ORGANIZER">
+                     <font>
+                        <Font name="Commando" size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="70.0" />
+               </VBox.margin>
+            </Pane>
+            <Button fx:id="bottoneUser" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="USER" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="GROUP" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneWorkspace" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="WORKSPACE" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneAttivita" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="ATTIVITA'" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="BOOK" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottonePreferenze" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="PREFERENZE" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneSettings" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="TELEGRAM" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PLANE" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="110.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="adminCloseButtonOnAction" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#close" prefHeight="50.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="close" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButtonAdmin" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="50.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="logout" textFill="WHITE">
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="290.0" layoutY="201.0">
+         <children>
+            <AnchorPane fx:id="anchorModificaUser" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#e9190c" layoutX="234.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICA USER" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="USER" layoutX="189.0" layoutY="199.0" size="3em" />
+                  <TextField fx:id="modificaNomeUser" alignment="CENTER" layoutX="258.0" layoutY="163.0" prefHeight="43.0" prefWidth="250.0" promptText="Nome User" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaUserButton" alignment="CENTER" graphicTextGap="10.0" layoutX="331.0" layoutY="375.0" mnemonicParsing="false" onAction="#modificaUser" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="modificaTelegramIdUser" alignment="CENTER" layoutX="258.0" layoutY="215.0" prefHeight="43.0" prefWidth="250.0" promptText="Telegram Id" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="PLANE" layoutX="189.0" layoutY="252.0" size="3em" />
+                  <Label fx:id="modificaUserMessageLabel" alignment="CENTER" layoutX="120.0" layoutY="335.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="modificaIdUser" alignment="CENTER" layoutX="259.0" layoutY="95.0" prefHeight="43.0" prefWidth="250.0" promptText="ID User " style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaUserOKButton1" alignment="CENTER" graphicTextGap="10.0" layoutX="543.0" layoutY="98.0" mnemonicParsing="false" onAction="#modificaUser" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: #4EE00E #4EE00E;" text="OK" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="modificaUserPassword" alignment="CENTER" layoutX="258.0" layoutY="267.0" prefHeight="43.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="LOCK" layoutX="189.0" layoutY="300.0" size="3em" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorModificaWorkspace" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#e9190c" layoutX="164.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICA WORKSPACE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="CALENDAR" layoutX="189.0" layoutY="176.0" size="3em" />
+                  <TextField fx:id="workspaceModificaWorkspace" alignment="CENTER" layoutX="259.0" layoutY="140.0" prefHeight="43.0" prefWidth="250.0" promptText="Nome Workspace" style="-fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaWorkspaceButton" alignment="CENTER" graphicTextGap="10.0" layoutX="331.0" layoutY="389.0" mnemonicParsing="false" onAction="#modificaWorkspace" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="IdAttivitaModificaWorkspace" alignment="CENTER" layoutX="259.0" layoutY="186.0" prefHeight="43.0" prefWidth="250.0" promptText="Id Attivita'" style="-fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BOOK" layoutX="188.0" layoutY="222.0" size="3em" />
+                  <TextArea fx:id="descrizioneModificaWorkspace" layoutX="260.0" layoutY="235.0" prefHeight="106.0" prefWidth="248.0" promptText="Breve descrizione del workspace" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;">
+                     <font>
+                        <Font name="Courier" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="TAG" layoutX="189.0" layoutY="301.0" size="3em" />
+                  <Label fx:id="modificaWorkspaceMessageLabel" alignment="CENTER" layoutX="120.0" layoutY="356.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idModificaWorkspace" alignment="CENTER" layoutX="258.0" layoutY="93.0" prefHeight="43.0" prefWidth="250.0" promptText="ID Workspace" style="-fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="okButtonModificaWorkspace" alignment="CENTER" graphicTextGap="10.0" layoutX="540.0" layoutY="95.0" mnemonicParsing="false" onAction="#modificaWorkspace" prefHeight="0.0" prefWidth="48.0" style="-fx-background-color: #4EE00E;" text="OK" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorModificaAttivita" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#e9190c" layoutX="197.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICA ATTIVITA'" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BOOK" layoutX="189.0" layoutY="175.0" size="3em" />
+                  <TextField fx:id="attivitaModificaAttivita" alignment="CENTER" layoutX="260.0" layoutY="140.0" prefHeight="43.0" prefWidth="250.0" promptText="Nome Attivita'" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaAttivitaButton" alignment="CENTER" graphicTextGap="10.0" layoutX="332.0" layoutY="389.0" mnemonicParsing="false" onAction="#modificaAttivita" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="luogoModificaAttivita" alignment="CENTER" layoutX="260.0" layoutY="186.0" prefHeight="43.0" prefWidth="250.0" promptText="Luogo" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BULLSEYE" layoutX="189.0" layoutY="222.0" size="3em" />
+                  <TextArea fx:id="descrizioneModificaAttivita" layoutX="261.0" layoutY="235.0" prefHeight="106.0" prefWidth="248.0" promptText="Breve descrizione dell'attivita'" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;">
+                     <font>
+                        <Font name="Courier" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="TAG" layoutX="189.0" layoutY="301.0" size="3em" />
+                  <Label fx:id="attivitaModificaMessageLabel" alignment="CENTER" layoutX="130.0" layoutY="356.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idUfficialeAttivita" alignment="CENTER" layoutX="260.0" layoutY="89.0" prefHeight="43.0" prefWidth="250.0" promptText="ID Attivita'" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaAttivitaOKButton" alignment="CENTER" graphicTextGap="10.0" layoutX="537.0" layoutY="92.0" mnemonicParsing="false" onAction="#modificaAttivita" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: #4EE00E #4EE00E;" text="OK" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorAggiungiUser" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#38e90c" layoutX="212.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGGIUNGI UTENTE">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="USER" layoutX="207.0" layoutY="193.0" size="3em" />
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="LOCK" layoutX="210.0" layoutY="320.0" size="3em" />
+                  <TextField fx:id="addUserUsernameField" alignment="CENTER" layoutX="258.0" layoutY="158.0" prefHeight="43.0" prefWidth="250.0" promptText="Username" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="addUserPasswordField" alignment="CENTER" layoutX="258.0" layoutY="283.0" prefHeight="0.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="aggiungiUserButtonPage" alignment="CENTER" graphicTextGap="10.0" layoutX="332.0" layoutY="375.0" mnemonicParsing="false" onAction="#aggiungiUtenteUserPane" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="332.0" AnchorPane.topAnchor="375.0">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font></Button>
+                  <TextField fx:id="addUserTelegramIdField" alignment="CENTER" layoutX="258.0" layoutY="221.0" prefHeight="43.0" prefWidth="250.0" promptText="Telegram Id" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="USER" layoutX="207.0" layoutY="256.0" size="3em" />
+                  <Label fx:id="userAddMessageLabel" alignment="CENTER" layoutX="129.0" layoutY="341.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorAggiungiWorkspace" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#38e90c" layoutX="172.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGGIUNGI WORKSPACE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="CALENDAR" layoutX="192.0" layoutY="144.0" size="3em" />
+                  <TextField fx:id="workspaceAggiungiWorkspace" alignment="CENTER" layoutX="260.0" layoutY="108.0" prefHeight="43.0" prefWidth="250.0" promptText="Workspace" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="aggiungiWorkspaceButton" alignment="CENTER" graphicTextGap="10.0" layoutX="332.0" layoutY="384.0" mnemonicParsing="false" onAction="#aggiungiWorkspace" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BOOK" layoutX="192.0" layoutY="207.0" size="3em" />
+                  <TextField fx:id="idAttivitaAggiungiWorkspace" alignment="CENTER" layoutX="260.0" layoutY="171.0" prefHeight="43.0" prefWidth="250.0" promptText="Id Attivita'" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="workspaceAddMessageLabel" alignment="CENTER" layoutX="122.0" layoutY="344.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="testoAggiungiWorkspace" layoutX="260.0" layoutY="226.0" prefHeight="95.0" prefWidth="248.0" promptText="Aggiungi una breve descrizione per il workspace" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;" />
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="TAG" layoutX="192.0" layoutY="287.0" size="3em" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorAggiungiAttivita" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#38e90c" layoutX="199.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGGIUNGI ATTIVITA'" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BOOK" layoutX="189.0" layoutY="158.0" size="3em" />
+                  <TextField fx:id="attivitaAddNomeAttivita" alignment="CENTER" layoutX="258.0" layoutY="122.0" prefHeight="43.0" prefWidth="250.0" promptText="Nome Attivita'" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="aggiungiAttivitaButton" alignment="CENTER" graphicTextGap="10.0" layoutX="332.0" layoutY="389.0" mnemonicParsing="false" onAction="#aggiungiAttivita" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="attivitaAddLuogo" alignment="CENTER" layoutX="258.0" layoutY="173.0" prefHeight="43.0" prefWidth="250.0" promptText="Luogo" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="BULLSEYE" layoutX="189.0" layoutY="211.0" size="3em" />
+                  <TextArea fx:id="attivitaAddDescrizione" layoutX="260.0" layoutY="227.0" prefHeight="106.0" prefWidth="248.0" promptText="Breve descrizione dell'attivita'" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;">
+                     <font>
+                        <Font name="Courier" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <FontAwesomeIcon fill="#ad07e3" glyphName="TAG" layoutX="189.0" layoutY="292.0" size="3em" />
+                  <Label fx:id="attivitaAddMessageLabel" alignment="CENTER" layoutX="121.0" layoutY="352.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneModificaPreferenze" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Button fx:id="modificaPreferenze" alignment="CENTER" graphicTextGap="10.0" layoutX="331.0" layoutY="386.0" mnemonicParsing="false" onAction="#modificaPreferenze" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="idUtenteModificaPreferenze" alignment="CENTER" layoutX="258.0" layoutY="81.0" prefHeight="43.0" prefWidth="250.0" promptText="Id Utente" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="textAreaModificaPreferenze" layoutX="15.0" layoutY="133.0" prefHeight="218.0" prefWidth="734.0" promptText="Area destinata alla stampa delle preferenze di ogni utente" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;">
+                     <font>
+                        <Font name="Courier" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="idUtenteModificaOkButton1" alignment="CENTER" graphicTextGap="10.0" layoutX="525.0" layoutY="84.0" mnemonicParsing="false" onAction="#modificaPreferenze" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: #4EE00E #4EE00E;" text="OK" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#ad07e3" layoutX="254.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREFERENZE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="modificaPreferenzeMessageLabel" alignment="CENTER" layoutX="120.0" layoutY="358.0" prefHeight="22.0" prefWidth="526.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneSettings" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Rectangle arcHeight="10.0" arcWidth="15.0" fill="#1f93ff00" height="50.0" layoutX="253.0" layoutY="288.0" stroke="#0088cc" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="3.0" width="262.0" />
+                  <Rectangle fx:id="rettangolo" arcHeight="10.0" arcWidth="15.0" fill="#1f93ff00" height="50.0" layoutX="268.0" layoutY="192.0" stroke="#259908" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="3.0" width="95.0" />
+                  <Rectangle arcHeight="10.0" arcWidth="15.0" fill="#1f93ff00" height="50.0" layoutX="404.0" layoutY="192.0" stroke="#c8180f" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="3.0" width="95.0" />
+                  <Label fx:id="botTextLabel" alignment="CENTER" layoutX="261.0" layoutY="295.0" prefHeight="37.0" prefWidth="248.0" textAlignment="CENTER" textFill="#0088cc">
+                     <font>
+                        <Font name="Commando" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="telegramOffButton" layoutX="411.0" layoutY="202.0" mnemonicParsing="false" onAction="#telegramOff" onMouseClicked="#telegramOff" onMousePressed="#telegramOff" style="-fx-background-color: #E9190C #E9190C;" text="DISATTIVA" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="telegramOnButton" layoutX="284.0" layoutY="202.0" mnemonicParsing="false" onAction="#telegramOn" style="-fx-background-color: #38E90C;" text="ATTIVA" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="15.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#0088cc" layoutX="264.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telegram Bot">
+                     <font>
+                        <Font name="Commando" size="40.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPanePreferenze" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Button fx:id="modificaPreferenzeToPane" alignment="CENTER" graphicTextGap="10.0" layoutX="612.0" layoutY="85.0" mnemonicParsing="false" onAction="#modificaPreferenze" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="idUtentePreferenze" alignment="CENTER" layoutX="258.0" layoutY="81.0" prefHeight="43.0" prefWidth="250.0" promptText="Id Utente" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="textAreaPreferenze" layoutX="15.0" layoutY="133.0" prefHeight="287.0" prefWidth="734.0" promptText="Area destinata alla stampa delle preferenze di ogni utente" style="-fx-border-color: #AD07E3 #AD07E3 #AD07E3 #AD07E3; -fx-border-width: 5;">
+                     <font>
+                        <Font name="Courier" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="idUtenteOkButton" alignment="CENTER" graphicTextGap="10.0" layoutX="534.0" layoutY="85.0" mnemonicParsing="false" onAction="#selezionaPreferenze" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: #4EE00E #4EE00E;" text="OK" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#ad07e3" layoutX="254.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREFERENZE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="50.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="paneAttivita" onMouseClicked="#descrizioneAttivita" prefHeight="432.0" prefWidth="766.0" style="-fx-background-color: #ffffff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="406.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="attivitaTableView" onMouseClicked="#descrizioneAttivita" prefHeight="419.0" prefWidth="765.0" styleClass="cell" stylesheets="@../CSS/AdminController2.css" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="columnAttivitaId" prefWidth="111.0" text="ID" />
+                        <TableColumn fx:id="columnNomeAttivita" prefWidth="111.0" text="NOME ATTIVITA'" />
+                        <TableColumn fx:id="columnLuogo" prefWidth="111.0" text="LUOGO" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Pane prefHeight="17.0" prefWidth="766.0">
+                     <children>
+                        <Button fx:id="aggiungiAttivitaButtonToPage" alignment="CENTER" graphicTextGap="10.0" layoutX="390.0" layoutY="12.0" mnemonicParsing="false" onAction="#aggiungiAttivita" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="modificaAttivitatoPane" alignment="CENTER" graphicTextGap="10.0" layoutX="272.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaAttivita" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="GEAR" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="refreshButtonAttivita" alignment="CENTER" graphicTextGap="10.0" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#refreshAttivita" prefHeight="27.0" prefWidth="36.0" style="-fx-background-color: #AD07E3 #AD07E3;" stylesheets="@../CSS/AdminController2.css" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="paneWorkspace" prefHeight="432.0" prefWidth="766.0" style="-fx-background-color: #ffffff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="406.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="workspaceTableView" onMouseClicked="#descrizioneWorkspace" prefHeight="419.0" prefWidth="765.0" styleClass="cell" stylesheets="@../CSS/AdminController2.css" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="columnWorkspaceId" prefWidth="111.0" text="ID" />
+                        <TableColumn fx:id="columnWorkspace" prefWidth="111.0" text="WORKSPACE" />
+                        <TableColumn fx:id="columnAttivita" prefWidth="111.0" text="ATTIVITA'" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Pane prefHeight="17.0" prefWidth="766.0">
+                     <children>
+                        <Button fx:id="aggiungiWorkspaceButtontoPage" alignment="CENTER" graphicTextGap="10.0" layoutX="390.0" layoutY="12.0" mnemonicParsing="false" onAction="#aggiungiWorkspace" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="modificaWorkspacetoPane" alignment="CENTER" graphicTextGap="10.0" layoutX="272.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaWorkspace" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="GEAR" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="refreshButtonWorkspace" alignment="CENTER" graphicTextGap="10.0" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#refreshWorkspace" prefHeight="27.0" prefWidth="36.0" style="-fx-background-color: #AD07E3 #AD07E3;" stylesheets="@../CSS/AdminController2.css" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="paneUser" prefHeight="432.0" prefWidth="766.0" style="-fx-background-color: #ffffff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="406.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="userTableView" prefHeight="419.0" prefWidth="765.0" styleClass="cell" stylesheets="@../CSS/AdminController2.css" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="columnUserId" prefWidth="111.0" text="ID" />
+                        <TableColumn fx:id="columnUsername" prefWidth="111.0" text="USERNAME" />
+                        <TableColumn fx:id="columnTelegramId" prefWidth="75.0" text="TELEGRAM-ID" />
+                        <TableColumn fx:id="columnPassword" prefWidth="111.0" text="PASSWORD" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Pane prefHeight="17.0" prefWidth="766.0">
+                     <children>
+                        <Button fx:id="aggiungiUserButtonToPage" alignment="CENTER" graphicTextGap="10.0" layoutX="390.0" layoutY="12.0" mnemonicParsing="false" onAction="#aggiungiUtenteUserPane" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #38E90C;" text="AGGIUNGI" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="modifcaUserToPane" alignment="CENTER" graphicTextGap="10.0" layoutX="272.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaUser" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="GEAR" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="refreshButtonUser" alignment="CENTER" graphicTextGap="10.0" layoutX="711.0" layoutY="13.0" mnemonicParsing="false" onAction="#refreshUser" prefHeight="27.0" prefWidth="36.0" style="-fx-background-color: #AD07E3 #AD07E3;" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Commando" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" textAlignment="CENTER" wrappingWidth="16.428571701049805" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="adminTitlePane" layoutX="270.0" prefHeight="84.0" prefWidth="811.0" style="-fx-background-color: #AD07E3;">
+         <children>
+            <Label fx:id="adminTitleLabel" layoutX="14.0" layoutY="3.0" text="USER" textFill="#fdfbfb">
+               <font>
+                  <Font name="Commando" size="70.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="adminMessageLabel" alignment="TOP_CENTER" layoutX="289.0" layoutY="642.0" prefHeight="50.0" prefWidth="766.0" textAlignment="CENTER">
+         <font>
+            <Font name="Commando" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

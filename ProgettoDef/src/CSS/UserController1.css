@@ -1,0 +1,13 @@
+/* BOTTONI */
+.button
+{
+    -fx-background-color:   #E9190C;
+}
+.button:hover
+{
+    -fx-background-color:  #FA1103;
+}
+.button:pressed
+{
+    -fx-background-color:  #B8140A;
+}

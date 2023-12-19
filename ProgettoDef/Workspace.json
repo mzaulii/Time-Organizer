@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "workspace": "Universita - Informatica per il Management",
+    "descrizioneW": "Corso di Laurea Triennale per ricoprire un ruolo gestionale con tecnologie informatiche.",
+    "attivita": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": 1,
+    "workspace": "Palestra",
+    "descrizioneW": "Luogo attrezzato per lo svolgimento di attivita\u0027 atletiche o ginniche.",
+    "attivita": [
+      5,
+      6
+    ]
+  },
+  {
+    "id": 2,
+    "workspace": "Ristorante",
+    "descrizioneW": "Luogo pubblico dove consumare pasti completi.",
+    "attivita": [
+      9,
+      10
+    ]
+  },
+  {
+    "id": 3,
+    "workspace": "Biblioteca",
+    "descrizioneW": "Luogo dove si conservano e consultano libri oppure dove studiare.",
+    "attivita": [
+      7,
+      8
+    ]
+  },
+  {
+    "id": 4,
+    "workspace": "Stadio",
+    "descrizioneW": "Luogo dove poter assistere a partite o concerti",
+    "attivita": [
+      11,
+      12
+    ]
+  }
+]

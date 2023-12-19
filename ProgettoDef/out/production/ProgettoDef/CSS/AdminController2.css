@@ -1,0 +1,90 @@
+/* BOTTONI */
+.button
+{
+    -fx-background-color:   #AD07E3;
+}
+.button:hover
+{
+    -fx-background-color:  #8B09B5;
+}
+.button:pressed
+{
+    -fx-background-color:  #DA69FF;
+}
+
+
+/* TABELLA */
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color:  #AD07E3;
+}
+.table-view .column-header .label{
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+   -fx-alignment: CENTER;
+}
+.table-view .cell{
+   -fx-cell-size: 45;
+  -fx-alignment: center-center;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #BCBCBC;
+  -fx-border-size: 0.5, 0.5, 0.5, 0.5;
+  -fx-text-fill: #000000;
+  -fx-alignment: CENTER_LEFT;
+
+}
+.table-row-cell:selected {
+   -fx-background-color: whitesmoke;
+   -fx-text-background-color:  #6622CC;
+
+
+}
+
+/* la barra di scorrimento */
+
+/* The increment and decrement button CSS class of scrollbar */
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color: #D492E9;
+	-fx-background-radius: 2em;
+
+}
+
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+
+	-fx-background-color: transparent;
+	-fx-border-color:derive( #6622CC,80%);
+
+	-fx-background-radius: 2em;
+	-fx-border-radius:2em;
+
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+
+    -fx-background-color:derive( #6622CC,90%);
+	-fx-background-insets: 2, 0, 0;
+	-fx-background-radius: 2em;
+
+}
+
+*/
+/* chart properties */
+/*
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}
+*/

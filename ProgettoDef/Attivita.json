@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "attivita": "Programmazione di Internet",
+    "luogo": "LABORATORIO ERCOLANI - Edificio in via Mura Anteo Zamboni 2/A, Bologna ",
+    "descrizioneA": "Laboratorio di programmazione Internet, verrano svolte attivita\u0027 utilizzando Java"
+  },
+  {
+    "id": 1,
+    "attivita": "Sistemi Operativi",
+    "luogo": "AULA MAGNA - Edificio in via Filippo Re, 10, Bologna",
+    "descrizioneA": "Lezione e laboratorio per capire al meglio il funzionamento dei sistemi operativi odierni"
+  },
+  {
+    "id": 2,
+    "attivita": "Algoritmi e Strutture Dati",
+    "luogo": "AULA M2 P.GAZZI - Edificio in Porta S. Donato, 1, Bologna",
+    "descrizioneA": "Lezione per comprendere l\u0027utilizzo degli algoritmi piu\u0027 diffusi in ambito matematico e infromatico"
+  },
+  {
+    "id": 3,
+    "attivita": "Strategia Aziendale",
+    "luogo": "AULA M2 P.GAZZI - Edificio in Porta S. Donato, 1, Bologna",
+    "descrizioneA": "Lezione per comprendere quali sono le strategie ottimali utilizzante dalle piu\u0027 grandi aziende mondiali"
+  },
+  {
+    "id": 4,
+    "attivita": "Statistica Numerica",
+    "luogo": "AULA L.TONELLI - Piano Sesto - Edificio in p.zza di Porta San Donato 5, Bologna",
+    "descrizioneA": "Lezione e laboratorio per studiare le tecniche statistiche programmando con il linguaggio R"
+  },
+  {
+    "id": 5,
+    "attivita": "Sala Pesi",
+    "luogo": "Palestra Buenavida - Viale Aurelio Saffi, 50/A, Imola",
+    "descrizioneA": "Sala attrezzata dedicata al sollevamento pesi per body building e powerifting"
+  },
+  {
+    "id": 6,
+    "attivita": "Cardio",
+    "luogo": "Palestra Mcfit - Via Battistotti Sassi, 11 B, Milano",
+    "descrizioneA": "Sala attrezzata con macchinari e attrezzi dedicati alle attivita\u0027 di cardio (Ciclismo, Canottaggio, Corsa...)"
+  },
+  {
+    "id": 7,
+    "attivita": "Studio",
+    "luogo": "Biblioteca Universitaria - Via Zamboni, 33-35, Bologna",
+    "descrizioneA": "Sessione di studio programmato"
+  },
+  {
+    "id": 8,
+    "attivita": "Lettura",
+    "luogo": "Biblioteca Universitaria - Via Zamboni, 33-35, Bologna",
+    "descrizioneA": "Lettura di gruppo organizzata da alcuni studenti di lettere, con spiegazione del libro annessa"
+  },
+  {
+    "id": 9,
+    "attivita": "Pranzo",
+    "luogo": "Bottega Portici - P.za di Porta Ravegnana, 2, Bologna",
+    "descrizioneA": "Pranzo con menu\u0027 fisso, contattare il ristorante per prendere l\u0027ordinazione corretta"
+  },
+  {
+    "id": 10,
+    "attivita": "Cena",
+    "luogo": "Via Broccaindosso, 7/A, 40125 Bologna BO",
+    "descrizioneA": "Cena tipica emiliana con degustazione di vini della casa"
+  },
+  {
+    "id": 11,
+    "attivita": "Concerto",
+    "luogo": "Stadio Renato Dall\u0027Ara",
+    "descrizioneA": "Concerto di qualche cantante famoso\nBiglietti disponibili online su ticketone",
+    "preferenze": [
+      4
+    ]
+  },
+  {
+    "id": 12,
+    "attivita": "Partita",
+    "luogo": "Stadio Renato dall\u0027Ara",
+    "descrizioneA": "Partita di calcio di serie A",
+    "preferenze": [
+      4
+    ]
+  }
+]

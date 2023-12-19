@@ -1,0 +1,14 @@
+{
+    -fx-primary : #ffffff;
+    -fx-secondary : #AD07E3;
+    -fx-primarytext: white;
+    -fx-violet : #9606C4;
+    -fx-red : #FF0000;
+    -fx-color: #AD07E3;
+}
+
+.dash_btn:hover{
+
+    -fx-border-color: -fx-primary;
+    -fx-border-width: 0px 0px 0px 8px;
+}

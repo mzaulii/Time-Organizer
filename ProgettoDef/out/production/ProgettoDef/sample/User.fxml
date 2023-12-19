@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserController">
+   <children>
+      <VBox fx:id="leftUserVBox" prefHeight="700.0" prefWidth="270.0" style="-fx-background-color: #AD07E3;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="150.0" prefWidth="270.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" layoutX="105.0" layoutY="79.0" size="5em" />
+                  <Text fill="WHITE" layoutX="60.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME ORGANIZER">
+                     <font>
+                        <Font name="Commando" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="106.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER" textAlignment="CENTER">
+                     <font>
+                        <Font name="Commando" size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="180.0" />
+               </VBox.margin>
+            </Pane>
+            <Button fx:id="saveButton" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#salvaPrefernze" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="SAVE" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneAzioneUtente" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="CALENDAR" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneTelegram" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="TELEGRAM" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PLANE" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="bottoneSettings" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="SETTINGS" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="bottoneHelp" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="60.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="HELP" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="QUESTION" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="100.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="userCloseButtonOnAction" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#close" prefHeight="50.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="close" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="2em" />
+               </graphic>
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButtonUser" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="50.0" prefWidth="270.0" stylesheets="@../CSS/AdminController2.css" text="logout" textFill="WHITE">
+               <font>
+                  <Font name="Commando" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="290.0" layoutY="201.0">
+         <children>
+            <AnchorPane fx:id="anchorPaneUserHelp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <FontAwesomeIcon fill="#6ee30071" glyphName="QUESTION" layoutX="266.0" layoutY="370.0" size="33em" />
+                  <Button fx:id="contactUsUserButton" alignment="CENTER" graphicTextGap="10.0" layoutX="332.0" layoutY="308.0" mnemonicParsing="false" onAction="#contactUs" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #499c00#499c00;" text="CONTACT US" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="167.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLICCA IL PULSANTE QUI SOTTO PER CONTATTARE I CREATORI DI TIME ORGANIZER. SI APRIRA' LA VOSTRA MAIL APP PREDEFINITA CON I NOSTRI INDIRIZZI GIA' PREIMPOSTATI." textAlignment="CENTER" wrappingWidth="454.3806457519531">
+                     <font>
+                        <Font name="Commando" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#499c00" layoutX="332.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HELP">
+                     <font>
+                        <Font name="Commando" size="60.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneUserTelegram" prefHeight="433.0" prefWidth="783.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <FontAwesomeIcon fill="#008bcc53" glyphName="PLANE" layoutX="210.0" layoutY="372.0" size="33em" wrappingWidth="419.2381286621094" />
+                  <Text fill="#0088cc" layoutX="263.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TELEGRAM">
+                     <font>
+                        <Font name="Commando" size="60.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="telegramUserButton" alignment="CENTER" graphicTextGap="10.0" layoutX="335.0" layoutY="279.0" mnemonicParsing="false" onAction="#openTelegram" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #0088cc;" text="TELEGRAM" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="167.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clicca per aprire direttamente il bot su telegram desktop o sull' app:" textAlignment="CENTER" wrappingWidth="454.3806457519531">
+                     <font>
+                        <Font name="Commando" size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneUserSettings" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#ad07e3" layoutX="216.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMPOSTAZIONI UTENTE">
+                     <font>
+                        <Font name="Commando" size="40.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nuovoNomeUtenteUser" alignment="CENTER" layoutX="436.0" layoutY="141.0" prefHeight="43.0" prefWidth="250.0" promptText="Nuovo Nome Utente" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="nuovaPasswordUser" alignment="CENTER" layoutX="436.0" layoutY="248.0" prefHeight="43.0" prefWidth="250.0" promptText="Nuova Password" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fx:id="emojiUserUser" fill="#ad07e3" glyphName="USER" layoutX="378.0" layoutY="178.0" size="3em" />
+                  <TextField fx:id="vecchioNomeUser" alignment="CENTER" layoutX="107.0" layoutY="142.0" prefHeight="43.0" prefWidth="250.0" promptText="Nome User" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="vecchioTelegramIdUser" alignment="CENTER" layoutX="107.0" layoutY="194.0" prefHeight="43.0" prefWidth="250.0" promptText="Telegram Id" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fx:id="emojiTelegramUser" fill="#ad07e3" glyphName="PLANE" layoutX="378.0" layoutY="231.0" size="3em" />
+                  <TextField fx:id="vecchiaPasswordUser" alignment="CENTER" layoutX="107.0" layoutY="246.0" prefHeight="43.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIcon fx:id="emojiLockUser" fill="#ad07e3" glyphName="LOCK" layoutX="380.0" layoutY="279.0" size="3em" />
+                  <TextField fx:id="nuovoTelegramIdUser" alignment="CENTER" layoutX="436.0" layoutY="194.0" prefHeight="43.0" prefWidth="250.0" promptText="Nuovo Telegram Id" style="-fx-background-color: trasparent; -fx-border-color: #AD07E3 #AD07E3; -fx-border-width: 5; -fx-opacity: 7;">
+                     <font>
+                        <Font name="Courier Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="modificaUserButton" alignment="CENTER" graphicTextGap="10.0" layoutX="510.0" layoutY="331.0" mnemonicParsing="false" onAction="#modificaDatiUtente" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #E9190C #E9190C;" text="MODIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="verificaUserButton" alignment="CENTER" graphicTextGap="10.0" layoutX="179.0" layoutY="331.0" mnemonicParsing="false" onAction="#verificaDatiUtente" prefHeight="27.0" prefWidth="104.0" stylesheets="@../CSS/UserController1.css" text="VERIFICA" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="verificaUMessageLabel" alignment="CENTER" layoutX="88.0" layoutY="300.0" prefHeight="22.0" prefWidth="286.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="modificaUMessageLabel" alignment="CENTER" layoutX="419.0" layoutY="301.0" prefHeight="22.0" prefWidth="286.0" textAlignment="CENTER" textFill="#d50303">
+                     <font>
+                        <Font name="Commando" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneUserCalendario" prefHeight="437.0" prefWidth="764.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <ListView fx:id="listworkspaceUser" layoutX="1.0" layoutY="33.0" onMouseClicked="#selectWorkspace" onMousePressed="#preferenzeUserWorkspace" prefHeight="404.0" prefWidth="268.0" />
+                  <Label alignment="CENTER" layoutX="1.0" prefHeight="34.0" prefWidth="268.0" style="-fx-background-color: #AD07E3 #AD07E3;" text="WORKSPACE" textFill="WHITE" />
+                  <ListView fx:id="listAttivitaUser" layoutX="298.0" layoutY="34.0" onMousePressed="#prefernzeUserAttivita" prefHeight="155.0" prefWidth="484.0" />
+                  <Label alignment="CENTER" layoutX="298.0" prefHeight="34.0" prefWidth="485.0" style="-fx-background-color: #AD07E3 #AD07E3;" text="ATTIVITA'" textFill="WHITE" />
+                  <TextArea fx:id="textAreaPrefernzeUser" layoutX="297.0" layoutY="247.0" prefHeight="190.0" prefWidth="485.0" promptText="Area di testo in cui scrivere le preferenze" />
+                  <Label alignment="CENTER" layoutX="297.0" layoutY="213.0" prefHeight="34.0" prefWidth="485.0" style="-fx-background-color: #AD07E3 #AD07E3;" text="PREFERENZE" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneMessage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#ac09e3b3" layoutX="270.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+                     <font>
+                        <Font name="Commando" size="60.0" />
+                     </font>
+                  </Text>
+                  <TextArea editable="false" layoutX="31.0" layoutY="89.0" prefHeight="334.0" prefWidth="722.0" style="-fx-background-color: #ffffff;" text="Benvenuto in TimeOrganizer, gli amministratori ti assicurano che il tuo login o la tua registrazione &#10;sono avvenuti con successo.&#10;&#10;Come utilizzare al meglio Time Organizer?&#10;Nella colonna di sinistra avrai a disposizione una serie di bottoni cliccabili per &#10;navigare all’interno dell’applicativo:&#10;- Calendar: scheda principale dell’interfaccia, ti permette di esprimere delle preferenze &#10;            nella TextArea dedicata, selezionando prima i workspace e poi le attività. &#10;            Ti ricordiamo di cliccare il bottone save alla fine di ogni sessione;&#10;- Telegram: entrando nella finestra e cliccando il pulsante telegram, puoi aprire il bot &#10;            telegram dell’applicativo;&#10;- Settings: area in cui avrai la possibilità di modificare tutti quanti i tuoi dati;&#10;- Help: qui puoi entrare in contatto con gli sviluppatori tramite una mail.&#10;&#10;Questo messaggio verrà eliminato, ti preghiamo di leggerlo con attenzione prima di proseguire.&#10;">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="userTitlePane" layoutX="270.0" prefHeight="84.0" prefWidth="811.0" style="-fx-background-color: #AD07E3;">
+         <children>
+            <Label fx:id="userTitleLabel" layoutX="14.0" layoutY="3.0" text="USER" textFill="#fdfbfb">
+               <font>
+                  <Font name="Commando" size="70.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="userMessageLabel" layoutX="289.0" layoutY="642.0" prefHeight="50.0" prefWidth="785.0" textAlignment="CENTER" alignment="CENTER">
+         <font>
+            <Font name="Commando" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

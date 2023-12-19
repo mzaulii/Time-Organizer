@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="telegrambots-4.9.1-jar-with-dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../PROGRAMMAZIONE_PROGETTO/telegrambots-4.9.1-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
